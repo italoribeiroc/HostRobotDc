@@ -1,23 +1,14 @@
-import * as React from "react";
-import { Avatar, Button, Card, Text } from "react-native-paper";
+import * as React from 'react';
+import { StyledCard, TouchableCard, StyledTitle, StyledCover } from './style';
 
-const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
-export default CardButton = () => (
-  <Card>
-    <Card.Title
-      title="Card Title"
-      subtitle="Card Subtitle"
-      left={LeftContent}
-    />
-    <Card.Content>
-      <Text variant="titleLarge">Card title</Text>
-      <Text variant="bodyMedium">Card content</Text>
-    </Card.Content>
-    <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
-    <Card.Actions>
-      <Button>Cancel</Button>
-      <Button>Ok</Button>
-    </Card.Actions>
-  </Card>
-);
+export default function CardButton({ title, image, action }) {
+    return (
+        <TouchableCard onPress={action}>
+            <StyledCard>
+                <StyledCover source={image} />
+                <StyledTitle title={title} titleVariant={"titleLarge"}/>
+            </StyledCard>
+        </TouchableCard>
+    );
+}

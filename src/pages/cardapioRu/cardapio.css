@@ -1,0 +1,7 @@
+.cardapio {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(2, 150px);
+    grid-gap: 30px 40px;
+    margin: auto;
+}
