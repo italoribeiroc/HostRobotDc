@@ -23,4 +23,5 @@ export const StyledBackAction = styled(IconButton)`
 export const StyledContent = styled(Appbar.Content)`
     align-self: 'center';
     padding-left: 45px;
+    
 `
