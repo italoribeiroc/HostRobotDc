@@ -10,6 +10,7 @@ import Home from './src/pages/home';
 import Departamento from './src/pages/departamento';
 import Cardapio from './src/pages/cardapioRu';
 import GruposDeExtensao from './src/pages/gruposDeExtensao';
+import LaboratoriosPesquisa from './src/pages/laboratorios';
 import Salas from './src/pages/navegacaoSalas';
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Screen name="Departamento" component={Departamento} />
         <Screen name="Cardapio" component={Cardapio} />
         <Screen name="GruposDeExtensao" component={GruposDeExtensao} />
+        <Screen name="LaboratoriosPesquisa" component={LaboratoriosPesquisa} />
         <Screen name="Salas" component={Salas} />
       </Navigator>
     </NavigationContainer>
