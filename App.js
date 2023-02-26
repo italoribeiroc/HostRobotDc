@@ -8,6 +8,7 @@ const {Navigator, Screen} = createNativeStackNavigator();
 import Home from './src/pages/home';
 import Departamento from './src/pages/departamento';
 import Cardapio from './src/pages/cardapioRu';
+import GruposDeExtensao from './src/pages/gruposDeExtensao';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Screen name="Home" component={Home} />
         <Screen name="Departamento" component={Departamento} />
         <Screen name="Cardapio" component={Cardapio} />
+        <Screen name="GruposDeExtensao" component={GruposDeExtensao} />
       </Navigator>
     </NavigationContainer>
   );

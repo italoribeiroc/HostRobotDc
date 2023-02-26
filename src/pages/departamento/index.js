@@ -15,7 +15,9 @@ export default function Departamento({ navigation }) {
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
             <NavigationHeader navigation={navigation} title={'Departamento de Computação'}/>
             <MenuGrid>
-                <CardButton image={gruposExtensaoIcon} title={"Grupos de Extensão"} />
+                <CardButton image={gruposExtensaoIcon} title={"Grupos de Extensão"} action={() => {
+                    navigation.navigate('GruposDeExtensao');
+                }}/>
                 <CardButton image={laboratoriosIcon} title={"Laboratórios e Pesquisa"} />
                 <CardButton image={eventosIcon} title={"Eventos"} />
                 <CardButton image={salasIcon} title={"Salas"} />

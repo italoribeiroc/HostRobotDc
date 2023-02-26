@@ -8,8 +8,8 @@ export const HeaderContainer = styled.View`
     justify-content: 'space-around';
     width: 90%;
     background-color: '#fff';
-    margin-bottom: 63px
-    padding-right: 190px
+    margin-bottom: 3.6875rem;
+    padding-right: 190px;
     
 `;
 
