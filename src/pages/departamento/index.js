@@ -20,7 +20,9 @@ export default function Departamento({ navigation }) {
                 }}/>
                 <CardButton image={laboratoriosIcon} title={"Laboratórios e Pesquisa"} />
                 <CardButton image={eventosIcon} title={"Eventos"} />
-                <CardButton image={salasIcon} title={"Salas"} />
+                <CardButton image={salasIcon} title={"Salas"} action={() => {
+                    navigation.navigate('Salas');
+                }}/>
                 
             </MenuGrid>
             
