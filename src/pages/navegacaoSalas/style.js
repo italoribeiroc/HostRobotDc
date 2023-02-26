@@ -1,7 +1,12 @@
 import styled from "styled-components";
-import { Image } from "react-native";
+import { TabScreen, Tabs } from 'react-native-paper-tabs';
 
-export const MapImage = styled(Image)`
-    width: 100%;
-    height: 100%;
+export const Tab = styled(Tabs)`
+    background-color: white;
 `;
+
+
+export const TabItem = styled(TabScreen)`
+    
+`;
+
