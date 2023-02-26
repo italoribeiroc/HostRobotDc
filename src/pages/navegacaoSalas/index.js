@@ -8,14 +8,13 @@ import { Tabs, TabScreen } from 'react-native-paper-tabs';
 import mapa1Andar from '../../assets/images/mapaImages/mapa1andar.png';
 
 
-
 export default function Salas({navigation}){
 
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff', paddingTop: 40}}>
             <NavigationHeader navigation={navigation} title={'Salas'}/>
             <View style={{ flex:1, backgroundColor: '#fff' }}>
-                <Image source={require('../../assets/images/mapaImages/mapa1andar.png')} />
+                <img src={mapa1Andar} />
             </View>
         </View>
     )

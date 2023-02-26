@@ -18,7 +18,9 @@ export default function Departamento({ navigation }) {
                 <CardButton image={gruposExtensaoIcon} title={"Grupos de Extensão"} action={() => {
                     navigation.navigate('GruposDeExtensao');
                 }}/>
-                <CardButton image={laboratoriosIcon} title={"Laboratórios e Pesquisa"} />
+                <CardButton image={laboratoriosIcon} title={"Laboratórios e Pesquisa"} action={() => {
+                    navigation.navigate('LaboratoriosPesquisa');
+                }}/>
                 <CardButton image={eventosIcon} title={"Eventos"} />
                 <CardButton image={salasIcon} title={"Salas"} action={() => {
                     navigation.navigate('Salas');
