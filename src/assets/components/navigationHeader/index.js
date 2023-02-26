@@ -18,7 +18,7 @@ export default function NavigationHeader({ navigation, title }) {
                     onPress={() => navigation.goBack()}  
                 />
             )}
-            <StyledContent title={title} titleStyle={{ fontSize: 40, lineHeight: 45 }}/>
+            <StyledContent title={title} titleStyle={{ fontSize: 40, lineHeight: 45, color:'#4B6076', fontFamily:'verdana'}}/>
             <IconButton
                 icon="wheelchair-accessibility"
                 iconColor={'#4B6076'}
