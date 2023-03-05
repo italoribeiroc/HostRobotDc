@@ -13,7 +13,7 @@ import mapa2Andar from '../../assets/images/mapaImages/mapa2andar.png';
 export default function Salas({navigation}){
 
     const handlePress = (sala) => {
-        console.log(`Clicou para ir na sala: ${sala}`);
+        fetch(`http://192.168.137.14:5000/ros/goTo/${sala}`).catch((error)=> console.log(error));
     }
 
     return (
@@ -29,27 +29,27 @@ export default function Salas({navigation}){
                             <View style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}>
 
                                 {/*LE-1 a LE-4 */}
-                                <TouchableOpacity onPress={() => handlePress('le-1')} style={{ position: 'absolute', top: 10, left: 90 }}>
+                                <TouchableOpacity onPress={() => handlePress('LE-1')} style={{ position: 'absolute', top: 10, left: 90 }}>
                                     <View style={{ width: 80, height: 100 }} />
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={() => handlePress('le-2')} style={{ position: 'absolute', top: 10, left: 175 }}>
+                                <TouchableOpacity onPress={() => handlePress('LE-2')} style={{ position: 'absolute', top: 10, left: 175 }}>
                                     <View style={{ width: 80, height: 100 }} />
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={() => handlePress('le-3')} style={{ position: 'absolute', top: 10, left: 260 }}>
+                                <TouchableOpacity onPress={() => handlePress('LE-3')} style={{ position: 'absolute', top: 10, left: 260 }}>
                                     <View style={{ width: 80, height: 100 }} />
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={() => handlePress('le-4')} style={{ position: 'absolute', top: 10, left: 345 }}>
+                                <TouchableOpacity onPress={() => handlePress('LE-4')} style={{ position: 'absolute', top: 10, left: 345 }}>
                                     <View style={{ width: 80, height: 100 }} />
                                 </TouchableOpacity>
 
 
-                                <TouchableOpacity onPress={() => handlePress('PPGCC-4')} style={{ position: 'absolute', top: 10, left: 500 }}>
+                                <TouchableOpacity onPress={() => handlePress('PPG-CC4')} style={{ position: 'absolute', top: 10, left: 500 }}>
                                     <View style={{ width: 80, height: 100 }} />
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={() => handlePress('Espaço Maker')} style={{ position: 'absolute', top: 10, left: 585 }}>
+                                <TouchableOpacity onPress={() => handlePress('Maker')} style={{ position: 'absolute', top: 10, left: 585 }}>
                                     <View style={{ width: 110, height: 100 }} />
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={() => handlePress('le-6')} style={{ position: 'absolute', top: 10, left: 705 }}>
+                                <TouchableOpacity onPress={() => handlePress('LE-6')} style={{ position: 'absolute', top: 10, left: 705 }}>
                                     <View style={{ width: 80, height: 100 }} />
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => handlePress('Auditorio')} style={{ position: 'absolute', top: 10, left: 790 }}>
@@ -59,11 +59,8 @@ export default function Salas({navigation}){
                                 <TouchableOpacity onPress={() => handlePress('Copa')} style={{ position: 'absolute', top: 180, left: 10 }}>
                                     <View style={{ width: 80, height: 90 }} />
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={() => handlePress('LIG')} style={{ position: 'absolute', top: 275, left: 10 }}>
+                                <TouchableOpacity onPress={() => handlePress('Lig')} style={{ position: 'absolute', top: 275, left: 10 }}>
                                     <View style={{ width: 80, height: 90 }} />
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => handlePress('Churrasqueira')} style={{ position: 'absolute', top: 275, left: 95 }}>
-                                    <View style={{ width: 250, height: 100 }} />
                                 </TouchableOpacity>
                             </View>
                         </View>
