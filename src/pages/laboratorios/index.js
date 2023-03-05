@@ -44,7 +44,7 @@ const laboratorios = [
     {
         name: 'Advanced Research in Software Engineering',
         image: imageAdvanSE,
-        description: 'With more than 23 years of history, this lab (old GDMS) has greatly contributed to the research in software engineering in Brazil. Currently, it is coordinated by professors Dr. Valter Vieira de Camargo e Dr. Daniel Lucrédio. Both are able to coordinate masters, Ph.D. and also post-doc students. We are always open to receive new student to work with us! We have colaboration with several institutions/universities in Brazil and abroad. We have in this lab a good space with good infrastructure to receive the students. We have also interest in collaborations with private companies to have the opportunity to apply our research in the real world. Come to work with us!',
+        description: 'Com mais de 23 anos de história, este laboratório (antigo GDMS) tem contribuído muito para a pesquisa em engenharia de software no Brasil. Atualmente é coordenado pelos professores Dr. Valter Vieira de Camargo e Dr. Daniel Lucrédio. Ambos são capazes de coordenar mestrados, doutorados e também alunos de pós-doutorado. Estamos sempre abertos para receber novos alunos para trabalhar conosco! Temos colaboração com diversas instituições/universidades no Brasil e exterior. Temos neste laboratório um bom espaço com boa infraestrutura para receber os alunos. Também temos interesse em colaborações com empresas privadas para ter a oportunidade de aplicar nossa pesquisa no mundo real. Venha trabalhar conosco!',
     },
     {
         name: 'Biomedical Image Processing Group',
