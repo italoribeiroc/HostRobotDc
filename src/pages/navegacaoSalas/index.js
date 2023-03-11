@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { View, TouchableOpacity } from 'react-native';
-import { TabItem, Tab } from './style';
+import { TabItem, Tab, StyledContent } from './style';
 import NavigationHeader from '../../assets/components/navigationHeader';
 import { } from 'react-native-paper';
 import { Tabs, TabScreen } from 'react-native-paper-tabs';
@@ -18,7 +18,7 @@ export default function Salas({navigation}){
 
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff', paddingTop: 40}}>
-            <NavigationHeader navigation={navigation} title={'Salas'}/>
+            <NavigationHeader navigation={navigation} title={'Salas: Para onde você deseja ir?'}/>
             <View style={{ flex:1, backgroundColor: '#fff' }}>
                 <Tabs style={{ marginBottom: 40, backgroundColor:'#fff', shadowColor:'#fff', color:'#4B6076' }}
                     theme={{ colors: { primary: '#4B6076' } }}
