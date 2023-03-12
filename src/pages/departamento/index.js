@@ -10,24 +10,38 @@ import salasIcon from '../../assets/images/menuImages/salas_icon.png'
 import { MenuGrid } from '../../assets/components/menuGrid/style';
 import BrasilFlag from '../../assets/images/brasil.svg';
 
+import { setConfiguration } from 'react-grid-system';
+setConfiguration({ maxScreenClass:'sm', defaultScreenClass:'sm', gridColumns:'2' });
+import { Container, Row, Col } from 'react-grid-system';
+
 export default function Departamento({ navigation }) {
     return(
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
             <NavigationHeader navigation={navigation} title={'Departamento de Computação'}/>
-            <MenuGrid>
+            <Container style={{alignItems: 'center'}}>
+            <Row style={{alignItems: 'center', marginLeft:'-30%'}}>
+            <Col sm={4} style={{alignItems: 'center', marginBottom:'15%'}}>
                 <CardButton image={gruposExtensaoIcon} title={"Grupos de Extensão"} action={() => {
                     navigation.navigate('GruposDeExtensao');
                 }}/>
+            </Col>
+            <Col sm={4} style={{alignItems: 'center'}}>
                 <CardButton image={laboratoriosIcon} title={"Laboratórios e Pesquisa"} action={() => {
                     navigation.navigate('LaboratoriosPesquisa');
                 }}/>
+            </Col>
+            </Row>
+            <Row style={{alignItems: 'center', marginLeft:'-45%'}}>
+            <Col sm={4} style={{alignItems: 'center', marginBottom:'15%'}}>
                 <CardButton image={eventosIcon} title={"Eventos"} />
+            </Col>
+            <Col sm={4} style={{alignItems: 'center'}}>
                 <CardButton image={salasIcon} title={"Salas"} action={() => {
                     navigation.navigate('Salas');
                 }}/>
-                
-            </MenuGrid>
-            
+            </Col>
+            </Row>
+            </Container>            
         </View>
     );
 };
