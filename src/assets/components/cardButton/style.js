@@ -15,6 +15,6 @@ export const StyledCover = styled(Card.Cover)`
 `;
 
 export const StyledTitle = styled(Card.Title)`
-    align-self: center;
+    ${'' /* align-self: center; */}
     font-size: 28px;
 `;

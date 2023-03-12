@@ -100,22 +100,23 @@ const Cardapio = ({ navigation }) => {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff', paddingTop: 40 }}>
       <NavigationHeader navigation={navigation} title={'Restaurante Universitário'} />
       <View style={{ flex: 1, backgroundColor: '#fff' }}>
-        <Tabs uppercase={false} mode='scrollable' style={{ backgroundColor: '#fff', alignItems: 'center', marginLeft: '-200px', marginRight: '-200px' }} theme={{ colors: { primary: '#4B6076' } }}>
+        <Tabs uppercase={false} mode='scrollable' style={{ backgroundColor: '#fff', alignItems: 'center', marginLeft: -200, marginRight: -200 }} theme={{ colors: { primary: '#4B6076' } }}>
           {
             dates.map((date) => (
               <TabScreen label={date.format('DD/MM')} key={date.format()}>
-                <Tabs uppercase={false} mode='scrollable' style={{ backgroundColor: '#fff', alignItems: 'center', marginLeft: '-200px', marginRight: '-200px' }} theme={{ colors: { primary: '#4B6076' } }}>
+                <Tabs uppercase={false} mode='scrollable' style={{ backgroundColor: '#fff', alignItems: 'center', marginLeft: -200, marginRight: -200 }} theme={{ colors: { primary: '#4B6076' } }}>
                   {
                     meals.map((meal) => (
                       <TabScreen label={meal} key={meal}>
-                        <View style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 200px)', gridTemplateRows: 'repeat(2, 150px)', gridGap: '30px 40px', margin: 'auto' }}>
+                        {/* <View style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 200px)', gridTemplateRows: 'repeat(2, 150px)', gridGap: '30px 40px', margin: 'auto' }}> */}
+                        <View style={{ flex: 1, flexWrap: 'wrap', gap: '30px 40px', margin: 'auto' }}>
                           {
                             info(menu[date.format('YYYY-MM-DD')][meal]).map((item) => (
                               <ItemCardapio className='cardapio-item'
                                 key={item.title + item.subtitle}
                                 title={item.title} subtitle={item.subtitle}
                                 content={item.content} icon={icon(item.icon)}
-                                style={{ backgroundColor: '#E8F2FF' }} />
+                                style={{ backgroundColor: '#E8F2FF', width: 200, height: 150 }} />
                             ))
                           }
                         </View>

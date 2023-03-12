@@ -10,19 +10,19 @@ import { MenuGrid } from '../../assets/components/menuGrid/style';
 
 export default function Home({ navigation }) {
 
-    return(
+    return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
             <NavigationHeader />
             <MenuGrid>
                 <CardButton image={navigationIcon} title={"Navegação"} />
                 <CardButton image={departamentoIcon} title={"Departamento"} action={() => {
                     navigation.navigate('Departamento');
-                }}/>
+                }} />
                 <CardButton image={alimentacaoIcon} title={"Alimentação"} action={() => {
                     navigation.navigate('Cardapio');
                 }} />
                 <CardButton image={horariosIcon} title={"Horários"} />
             </MenuGrid>
-        </View>
+        </View >
     );
 };
