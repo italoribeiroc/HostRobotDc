@@ -6,6 +6,8 @@ import { Avatar, Text } from 'react-native-paper';
 import { Tabs, TabScreen } from 'react-native-paper-tabs';
 import moment from 'moment';
 
+import defaultMenu from './cached.js';
+
 const icon = iconName => props => <Avatar.Icon style={styles.container} {...props} icon={iconName} />;
 
 
@@ -66,99 +68,6 @@ const info = (menu) => [
   },
 ]
 
-const defaultMenu = [
-  {
-    "id": 71248,
-    "meal_type": "Almoço",
-    "campus": "São Carlos",
-    "created_at": "2023-02-18T02:13:02.768465Z",
-    "date": "2023-02-13",
-    "main_dish_unrestricted": "Frango Xadrez",
-    "main_dish_vegetarian": "Grão de Bico Xadrez",
-    "main_dish_extra": "Ovos Mexidos",
-    "garnish": "Farofa Rica",
-    "accompaniment": "Arroz Branco e Integral / Feijão",
-    "salads": "Dois Tipos de Salada",
-    "dessert": "Fruta",
-    "juice": "Não Definido"
-  },
-  {
-    "id": 71252,
-    "meal_type": "Jantar",
-    "campus": "São Carlos",
-    "created_at": "2023-02-18T02:13:02.785345Z",
-    "date": "2023-02-13",
-    "main_dish_unrestricted": "Filé de Frango Grelhado",
-    "main_dish_vegetarian": "Hamburguer Vegetariano",
-    "main_dish_extra": "Ovos Mexidos",
-    "garnish": "Farofa Rica",
-    "accompaniment": "Arroz Branco e Integral / Feijão",
-    "salads": "Dois Tipos de Salada",
-    "dessert": "Fruta",
-    "juice": "Não Definido"
-  },
-  {
-    "id": 71256,
-    "meal_type": "Almoço",
-    "campus": "São Carlos",
-    "created_at": "2023-02-18T02:13:02.806322Z",
-    "date": "2023-02-14",
-    "main_dish_unrestricted": "Carne de Panela",
-    "main_dish_vegetarian": "Batata Recheada com PTS",
-    "main_dish_extra": "Omelete com Salsinha",
-    "garnish": "Polenta Cremosa",
-    "accompaniment": "Arroz Branco e Integral / Feijão Preto",
-    "salads": "Dois Tipos de Salada",
-    "dessert": "Doce",
-    "juice": "Não Definido"
-  },
-  {
-    "id": 71260,
-    "meal_type": "Jantar",
-    "campus": "São Carlos",
-    "created_at": "2023-02-18T02:13:02.821843Z",
-    "date": "2023-02-14",
-    "main_dish_unrestricted": "Carne Desfiada com Legumes",
-    "main_dish_vegetarian": "Quiche de Grão de Bico",
-    "main_dish_extra": "Omelete com Salsinha",
-    "garnish": "Polenta Cremosa",
-    "accompaniment": "Arroz Branco e Integral / Feijão Preto",
-    "salads": "Dois Tipos de Salada",
-    "dessert": "Doce",
-    "juice": "Não Definido"
-  },
-  {
-    "id": 71264,
-    "meal_type": "Almoço",
-    "campus": "São Carlos",
-    "created_at": "2023-02-18T02:13:02.839899Z",
-    "date": "2023-02-15",
-    "main_dish_unrestricted": "Filé de Frango à Pizzaiollo",
-    "main_dish_vegetarian": "Filé de PTS à Pizzaiollo",
-    "main_dish_extra": "Crepioca",
-    "garnish": "Batata Rustica",
-    "accompaniment": "Arroz Branco e Integral / Feijão",
-    "salads": "Dois Tipos de Salada",
-    "dessert": "Fruta",
-    "juice": "Não Definido"
-  },
-  {
-    "id": 71268,
-    "meal_type": "Jantar",
-    "campus": "São Carlos",
-    "created_at": "2023-02-18T02:13:02.856526Z",
-    "date": "2023-02-15",
-    "main_dish_unrestricted": "Iscas de Frango com Legumes",
-    "main_dish_vegetarian": "Charuto de Repolho com PTS",
-    "main_dish_extra": "Crepioca",
-    "garnish": "Batata Rustica",
-    "accompaniment": "Arroz Branco e Integral / Feijão",
-    "salads": "Dois Tipos de Salada",
-    "dessert": "Fruta",
-    "juice": "Não Definido"
-  }
-];
-
 const Cardapio = ({ navigation }) => {
   const [list, setList] = useState(defaultMenu);
 
@@ -172,8 +81,10 @@ const Cardapio = ({ navigation }) => {
   //     .then(data => handleListChange(data));
   // }, []);
 
+
+  const baseDate = '15/02';
   const meals = ['Almoço', 'Jantar'];
-  const dates = [moment('15/02', 'DD/MM').subtract(2, 'days'), moment('15/02', 'DD/MM').subtract(1, 'days'), moment('15/02', 'DD/MM')];
+  const dates = [moment(baseDate, 'DD/MM'), moment(baseDate, 'DD/MM').add(1, 'days'), moment(baseDate, 'DD/MM').add(2, 'days')];
   const campus = 'São Carlos';
 
   const menu = list
@@ -190,12 +101,12 @@ const Cardapio = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff', paddingTop: 40 }}>
       <NavigationHeader navigation={navigation} title={'Restaurante Universitário'} />
-      <View style={{ flex: 1, backgroundColor: '#fff' }}>
-        <Tabs uppercase={false} mode='scrollable' style={{ backgroundColor: '#fff', alignItems: 'center', marginLeft: -200, marginRight: -200 }} theme={{ colors: { primary: '#4B6076' } }}>
+      <View style={{ flex: 1, backgroundColor: '#fff', width: 900 }}>
+        <Tabs uppercase={false} mode='scrollable' style={{ backgroundColor: '#fff', alignItems: 'center' }} theme={{ colors: { primary: '#4B6076' } }}>
           {
             dates.map((date) => (
               <TabScreen label={date.format('DD/MM')} key={date.format()}>
-                <Tabs uppercase={false} mode='scrollable' style={{ backgroundColor: '#fff', alignItems: 'center', marginLeft: -200, marginRight: -200 }} theme={{ colors: { primary: '#4B6076' } }}>
+                <Tabs uppercase={false} mode='scrollable' style={{ backgroundColor: '#fff', alignItems: 'center' }} theme={{ colors: { primary: '#4B6076' } }}>
                   {
                     meals.map((meal) => (
                       <TabScreen label={meal} key={meal}>
@@ -206,11 +117,13 @@ const Cardapio = ({ navigation }) => {
                               key={item.title + item.subtitle}
                               title={item.title} subtitle={item.subtitle}
                               content={item.content} icon={icon(item.icon)}
-                              style={{ backgroundColor: '#E8F2FF', width: 200, height: 150 }} />
+                              style={{ backgroundColor: '#E8F2FF', width: 200, height: 150, marginTop: 20 }}
+                            />
                           )}
                           keyExtractor={item => item.title + item.subtitle}
                           numColumns={4}
                           columnWrapperStyle={{ justifyContent: 'space-between' }}
+                          style={{ width: '100%' }}
                         />
                       </TabScreen>
                     ))
