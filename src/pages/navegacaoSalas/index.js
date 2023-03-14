@@ -9,7 +9,7 @@ export default function Salas({ navigation }) {
 
     const handlePress = (sala) => {
         console.log(sala);
-        fetch(`http://192.168.137.14:5000/ros/goTo/${sala}`).catch((error) => console.log(error));
+        fetch(`http://192.168.1.100:5000/ros/goTo/${sala}`).catch((error) => console.log(error));
     }
 
     return (
