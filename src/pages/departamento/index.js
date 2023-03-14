@@ -44,10 +44,10 @@ export default function Departamento({ navigation }) {
                 renderItem={({ item }) => (<CardButton image={item.image} title={item.title} action={item.action} />)}
                 keyExtractor={item => item.title}
                 numColumns={2}
-                columnWrapperStyle={{ justifyContent: 'space-between' }}
-                contentContainerStyle={{ padding: 20 }}
-                style={{ flexBasis: 0, width: '60%' }}
-                ItemSeparatorComponent={() => <View style={{ height: 30 }} />}
+                columnWrapperStyle={{ justifyContent: 'center' }}
+                contentContainerStyle={{ padding: 10 }}
+                style={{ flexBasis: 0, width: 800, marginTop: -50 }}
+                ItemSeparatorComponent={() => <View style={{ height: 20 }} />}
             />
 
         </View>
