@@ -3,11 +3,14 @@ import { IconButton, MD3Colors, Appbar } from 'react-native-paper';
 import { useRoute } from '@react-navigation/native';
 import { HeaderContainer, StyledBackAction, StyledContent } from './style';
 import brasilFlag from '../../images/brFlag.png';
-import { ImageBackground } from 'react-native';
+import { ImageBackground, Dimensions, PixelRatio } from 'react-native';
 
 export default function NavigationHeader({ navigation, title }) {
     const route = useRoute();
     const { name } = route;
+
+    const { width } = Dimensions.get('window');
+    const scale = width / 320;
 
     return (
         <HeaderContainer>
@@ -18,7 +21,7 @@ export default function NavigationHeader({ navigation, title }) {
                     onPress={() => navigation.goBack()}
                 />
             )}
-            <StyledContent title={title} titleStyle={{ fontSize: 40, lineHeight: 45, color: '#4B6076' }} />
+            <StyledContent title={title} titleStyle={{ fontSize: 8 * scale, lineHeight: 45, color: '#4B6076' }} />
             <IconButton
                 icon="wheelchair-accessibility"
                 iconColor={'#4B6076'}
